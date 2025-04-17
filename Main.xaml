@@ -115,7 +115,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="804.0000000000001,366.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1156,424" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_ScrapedProfiles">
         <Variable.Default>
@@ -133,11 +133,6 @@
         </Variable.Default>
       </Variable>
       <Variable x:TypeArguments="x:String" Name="str_SearchInput" />
-      <Variable x:TypeArguments="sd:DataTable" Name="dt_PageExtraction">
-        <Variable.Default>
-          <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_28">new System.Data.DataTable();</CSharpValue>
-        </Variable.Default>
-      </Variable>
       <Variable x:TypeArguments="x:Int32" Name="Idx">
         <Variable.Default>
           <Literal x:TypeArguments="x:Int32" />
@@ -146,11 +141,6 @@
       <Variable x:TypeArguments="x:String" Name="str_CompanyName">
         <Variable.Default>
           <Literal x:TypeArguments="x:String">None</Literal>
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="sd:DataTable" Name="ExtractDataTable">
-        <Variable.Default>
-          <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">new System.Data.DataTable();</CSharpValue>
         </Variable.Default>
       </Variable>
       <Variable x:TypeArguments="scg:List(x:Int32)" Name="lst_IndexRowTmpToDelete">
@@ -164,7 +154,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Init - Invoke Workflow File (Init.xaml)" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="InitWorkflow.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="InitWorkflow - Invoke Workflow File (InitWorkflow.xaml)" sap:VirtualizedContainerService.HintSize="416,233.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="InitWorkflow.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InOutArgument x:TypeArguments="sd:DataTable" x:Key="dt_ScrapedProfiles">
           <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_23">dt_ScrapedProfiles</CSharpReference>
@@ -175,12 +165,9 @@
         <InOutArgument x:TypeArguments="sd:DataTable" x:Key="dt_Searchs">
           <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_25">dt_Searchs</CSharpReference>
         </InOutArgument>
-        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="dt_PageExtraction">
-          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_26">dt_PageExtraction</CSharpReference>
-        </InOutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ScrapingProfiles - Invoke Workflow File (ScrapingProfiles.xaml)" sap:VirtualizedContainerService.HintSize="416,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="ScrapingProfilesWorkflow.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ScrapingProfilesWorkflow - Invoke Workflow File (ScrapingProfilesWorkflow.xaml)" sap:VirtualizedContainerService.HintSize="416,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="ScrapingProfilesWorkflow.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InOutArgument x:TypeArguments="sd:DataTable" x:Key="dt_ScrapedProfiles">
           <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_28">dt_ScrapedProfiles</CSharpReference>
@@ -190,12 +177,6 @@
         </InOutArgument>
         <InOutArgument x:TypeArguments="sd:DataTable" x:Key="dt_Searchs">
           <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_30">dt_Searchs</CSharpReference>
-        </InOutArgument>
-        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="dt_PageExtraction">
-          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_31">dt_PageExtraction</CSharpReference>
-        </InOutArgument>
-        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="ExtractDataTable">
-          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_32">ExtractDataTable</CSharpReference>
         </InOutArgument>
         <InOutArgument x:TypeArguments="x:String" x:Key="str_CompanyName">
           <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_33">str_CompanyName</CSharpReference>
