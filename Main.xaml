@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -26,6 +26,30 @@
       <x:String>System.Windows.Markup</x:String>
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Core.Activities.Storage</x:String>
+      <x:String>UiPath.Core.Activities.Orchestrator</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>System.Numerics</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -58,13 +82,134 @@
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="804.0000000000001,366.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_ScrapedProfiles">
+        <Variable.Default>
+          <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29">new System.Data.DataTable();</CSharpValue>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_Entreprises">
+        <Variable.Default>
+          <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">new System.Data.DataTable();</CSharpValue>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_Searchs">
+        <Variable.Default>
+          <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_31">new System.Data.DataTable();</CSharpValue>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="str_SearchInput" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_PageExtraction">
+        <Variable.Default>
+          <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_28">new System.Data.DataTable();</CSharpValue>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:Int32" Name="Idx">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Int32" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="str_CompanyName">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">None</Literal>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="sd:DataTable" Name="ExtractDataTable">
+        <Variable.Default>
+          <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">new System.Data.DataTable();</CSharpValue>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="scg:List(x:Int32)" Name="lst_IndexRowTmpToDelete">
+        <Variable.Default>
+          <CSharpValue x:TypeArguments="scg:List(x:Int32)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_32">new System.Collections.Generic.List&lt;int&gt;()</CSharpValue>
+        </Variable.Default>
+      </Variable>
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Init - Invoke Workflow File (Init.xaml)" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="InitWorkflow.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="dt_ScrapedProfiles">
+          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_23">dt_ScrapedProfiles</CSharpReference>
+        </InOutArgument>
+        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="dt_Entreprises">
+          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_24">dt_Entreprises</CSharpReference>
+        </InOutArgument>
+        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="dt_Searchs">
+          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_25">dt_Searchs</CSharpReference>
+        </InOutArgument>
+        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="dt_PageExtraction">
+          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_26">dt_PageExtraction</CSharpReference>
+        </InOutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ScrapingProfiles - Invoke Workflow File (ScrapingProfiles.xaml)" sap:VirtualizedContainerService.HintSize="416,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="ScrapingProfilesWorkflow.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="dt_ScrapedProfiles">
+          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_28">dt_ScrapedProfiles</CSharpReference>
+        </InOutArgument>
+        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="dt_Entreprises">
+          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_29">dt_Entreprises</CSharpReference>
+        </InOutArgument>
+        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="dt_Searchs">
+          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_30">dt_Searchs</CSharpReference>
+        </InOutArgument>
+        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="dt_PageExtraction">
+          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_31">dt_PageExtraction</CSharpReference>
+        </InOutArgument>
+        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="ExtractDataTable">
+          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_32">ExtractDataTable</CSharpReference>
+        </InOutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="str_CompanyName">
+          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_33">str_CompanyName</CSharpReference>
+        </InOutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="str_SearchInput">
+          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_34">str_SearchInput</CSharpReference>
+        </InOutArgument>
+        <InOutArgument x:TypeArguments="x:Int32" x:Key="Idx">
+          <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_35">Idx</CSharpReference>
+        </InOutArgument>
+        <InOutArgument x:TypeArguments="scg:List(x:Int32)" x:Key="lst_IndexRowTmpToDelete">
+          <CSharpReference x:TypeArguments="scg:List(x:Int32)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_36">lst_IndexRowTmpToDelete</CSharpReference>
+        </InOutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
   </Sequence>
 </Activity>

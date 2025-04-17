@@ -1,0 +1,16 @@
+﻿{
+  "Name": "btnVerifyCaptcha",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "xEaiiE6APEa4-UAk753QmA",
+  "Reference": "ruDqCao96Eq_NMIIl08K1A/xEaiiE6APEa4-UAk753QmA",
+  "ParentRef": "ruDqCao96Eq_NMIIl08K1A/ILsIKXmT4kCOOB8pnHLEqQ",
+  "Created": "2025-04-17T16:07:45.0028809Z",
+  "Updated": "2025-04-17T16:10:24.271341Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

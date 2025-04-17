@@ -1,0 +1,16 @@
+﻿{
+  "Name": "btnCheckBox",
+  "Type": "Element",
+  "TaxonomyType": "Checkbox",
+  "Id": "RYrkcHxLVEaCvuVuTm7txg",
+  "Reference": "ruDqCao96Eq_NMIIl08K1A/RYrkcHxLVEaCvuVuTm7txg",
+  "ParentRef": "ruDqCao96Eq_NMIIl08K1A/ILsIKXmT4kCOOB8pnHLEqQ",
+  "Created": "2025-04-17T16:01:13.9631484Z",
+  "Updated": "2025-04-17T16:02:47.9822352Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

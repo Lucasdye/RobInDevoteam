@@ -1,0 +1,16 @@
+﻿{
+  "Name": "btnCaptchaBuster",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "40CTFQJbi0OZGuqX88mZEw",
+  "Reference": "ruDqCao96Eq_NMIIl08K1A/40CTFQJbi0OZGuqX88mZEw",
+  "ParentRef": "ruDqCao96Eq_NMIIl08K1A/ILsIKXmT4kCOOB8pnHLEqQ",
+  "Created": "2025-04-17T16:10:59.787257Z",
+  "Updated": "2025-04-17T16:14:04.0945876Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

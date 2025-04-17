@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="l1RhprvMRUakljxqr6NoOg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="google.fr" CVScreenId="5b279b8a-f785-4df9-8757-27981eea7aa8" DesignTimeRectangle="663, 552, 556, 65" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl aaname='Search' tag='TEXTAREA' /&gt;" Guid="8e421641-3047-4b1a-92fa-d9e0e0e44102" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAjAAAABFCAYAAABUgdw0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAFiSURBVHhe7dYxEYRAAATBk0AR4eYTJOBfwXm4zwjAAFPVQSe7BmZs+7EAAErGcwAA+DoBAwDkjN95LQCAEgEDAOQIGAAgR8AAADkCBgDIETAAQI6AAQByBAwAkCNgAIAcAQMA5AgYACBHwAAAOQIGAMgRMABAjoABAHIEDACQI2AAgBwBAwDkCBgAIEfAAAA5d8DMOV8nAMAXCRgAIEfAAAA5AgYAyBEwAECOgAEAcgQMAJAjYACAHAEDAOQIGAAgR8AAADkCBgDIETAAQI6AAQByBAwAkCNgAIAcAQMA5AgYACBHwAAAOQIGAMgRMABAjoABAHIEDACQI2AAgBwBAwDk3AEDAFAhYACAHAEDAOQIGAAgR8AAADkCBgDIETAAQI6AAQByBAwAkCNgAIAcAQMA5AgYACBHwAAAOQIGAMgRMABAjoABAHIEDACQI2AAgBwBAwDkCBgAIGds+7EAAEr+1ff+57TnZPEAAAAASUVORK5CYII=" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Google' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive">
+      <TargetAnchorable.PointOffset>
+        <PointOffset />
+      </TargetAnchorable.PointOffset>
+      <imageRef attrName="InformativeScreenshot" originalValue="6eb22a70b19eb18ad3bfea236a6fe9fb.png" xmlns="">0Cu5rnsrwV0K7ycvrq25gng</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

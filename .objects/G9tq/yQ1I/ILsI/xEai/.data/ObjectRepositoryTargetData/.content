@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="O9VEC6NBFkmgMj6shnU4zQ" Reference="ruDqCao96Eq_NMIIl08K1A/xEaiiE6APEa4-UAk753QmA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="google.com/sorry/index" CVScreenId="3db39116-8503-4380-97de-b6a2e3c69186" DesignTimeRectangle="478, 777, 125, 52" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl id='recaptcha-verify-button' tag='BUTTON' /&gt;" Guid="f34fbb3d-5a65-407c-ada8-3b9372e4afef" ScopeSelectorArgument="&lt;html app='msedge.exe' title='https://www.google.fr/search?q=site%3Alinkedin.com%2Fin+%28%28%22IT+Architect%22+OR+%22Architecte+SI%22+OR+%22Security+Architect%22%29+AND+%22AG2R%22+AND+%28%22%C3%8Ele-de-France%22+OR+%22Paris%22%29%29&amp;amp;sca_esv=0841a0c4fe98f0f5&amp;amp;ei=sSQBaJuBLcmIkdUPhNrQmAk&amp;amp;ved=0ahUKEwjbnaSRt9-MAxVJRKQEHQQtFJMQ4dUDCBA&amp;amp;uact=5&amp;amp;oq=site%3Alinkedin.com%2Fin+%28%28%22IT+Architect%22+OR+%22Architecte+SI%22+OR+%22Security+Architect%22%29+AND+%22AG2R%22+AND+%28%22%C3%8Ele-de-France%22+OR+%22Paris%22%29%29&amp;amp;gs_lp=Egxnd3Mtd2l6LXNlcnAif3NpdGU6bGlua2VkaW4uY29tL2luICgoIklUIEFyY2hpdGVjdCIgT1IgIkFyY2hpdGVjdGUgU0kiIE9SICJTZWN1cml0eSBBcmNoaXRlY3QiKSBBTkQgIkFHMlIiIEFORCAoIsOObGUtZGUtRnJhbmNlIiBPUiAiUGFyaXMiKSlIuUBQYliHQHAAeACQAQCYAQCgAQCqAQC4AQPIAQD4AQGYAgCgAgCoAgCYAwCIBgGSBwCgBwCyBwC4BwA&amp;amp;sclient=gws-wiz-serp' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="be9955bb5225bb2bedb9bcc7d05ec67b.png" xmlns="">0D65Md-dJZ0iMqs7LvLFOmw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

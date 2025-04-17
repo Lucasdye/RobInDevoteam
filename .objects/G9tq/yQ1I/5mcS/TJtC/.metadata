@@ -1,0 +1,16 @@
+﻿{
+  "Name": "TxtNoResult",
+  "Type": "Element",
+  "TaxonomyType": "Text",
+  "Id": "TJtCKRrvVkWQRH0jNmcDOA",
+  "Reference": "ruDqCao96Eq_NMIIl08K1A/TJtCKRrvVkWQRH0jNmcDOA",
+  "ParentRef": "ruDqCao96Eq_NMIIl08K1A/5mcS5gWEU0mJlPVr3PKaPA",
+  "Created": "2025-04-17T14:59:53.5864715Z",
+  "Updated": "2025-04-17T16:06:34.627704Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

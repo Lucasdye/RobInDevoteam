@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="KZjn0N4YOkmCUBGNEzf9zQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="google.fr/search" CVScreenId="4cd69f53-5805-4a69-81a2-c4051f4a99f8" DesignTimeRectangle="266, 437, 815, 21" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='P' aaname='Suggestions:' /&gt;" Guid="13c5e293-eeef-481a-977c-776496efcdf5" ImageBase64="" ScopeSelectorArgument="&lt;html app='msedge.exe' title='site:linkedin.com/in*- Google Search' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="67e66f730b525759cb695b288ffa4081.png" xmlns="">0sHq-T7XsWkyvU18AJxPo1Q</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

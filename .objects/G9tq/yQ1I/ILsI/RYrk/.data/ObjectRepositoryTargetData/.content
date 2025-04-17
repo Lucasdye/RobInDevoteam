@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="zq54MOm5aUqf4CTPlmhOQg" Reference="ruDqCao96Eq_NMIIl08K1A/RYrkcHxLVEaCvuVuTm7txg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="google.com/sorry/index" CVScreenId="ba51305d-5c89-483f-8fee-cc290aac1394" DesignTimeRectangle="65, 213, 35, 35" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl name='*' tag='IFRAME' /&gt;&lt;webctrl aria-role='checkbox' id='recaptcha-anchor' tag='SPAN' /&gt;" Guid="0d85fc37-7e30-4c77-a160-1a068ca05884" ImageBase64="" ScopeSelectorArgument="&lt;html app='msedge.exe' title='https://www.google.fr/search?q=site%3Alinkedin.com%2Fin+%28%28%22IT+Architect%22+OR+%22Architecte+SI%22+OR+%22Security+Architect%22%29+AND+%22AG2R%22+AND+%28%22%C3%8Ele-de-France%22+OR+%22Paris%22%29%29&amp;amp;sca_esv=0841a0c4fe98f0f5&amp;amp;ei=sSQBaJuBLcmIkdUPhNrQmAk&amp;amp;ved=0ahUKEwjbnaSRt9-MAxVJRKQEHQQtFJMQ4dUDCBA&amp;amp;uact=5&amp;amp;oq=site%3Alinkedin.com%2Fin+%28%28%22IT+Architect%22+OR+%22Architecte+SI%22+OR+%22Security+Architect%22%29+AND+%22AG2R%22+AND+%28%22%C3%8Ele-de-France%22+OR+%22Paris%22%29%29&amp;amp;gs_lp=Egxnd3Mtd2l6LXNlcnAif3NpdGU6bGlua2VkaW4uY29tL2luICgoIklUIEFyY2hpdGVjdCIgT1IgIkFyY2hpdGVjdGUgU0kiIE9SICJTZWN1cml0eSBBcmNoaXRlY3QiKSBBTkQgIkFHMlIiIEFORCAoIsOObGUtZGUtRnJhbmNlIiBPUiAiUGFyaXMiKSlIuUBQYliHQHAAeACQAQCYAQCgAQCqAQC4AQPIAQD4AQGYAgCgAgCoAgCYAwCIBgGSBwCgBwCyBwC4BwA&amp;amp;sclient=gws-wiz-serp' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="2a4c8491b58b101b7ab8e9f28f59c956.png" xmlns="">0qbUb211ufkOknw6sgYsjOg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

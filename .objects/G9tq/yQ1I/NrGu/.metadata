@@ -1,0 +1,13 @@
+﻿{
+  "Name": "GoogleHomePage",
+  "Description": "Google Home Page\r\n",
+  "Type": "Screen",
+  "Id": "NrGuxhtt_0me58V8iXAEbw",
+  "Reference": "ruDqCao96Eq_NMIIl08K1A/NrGuxhtt_0me58V8iXAEbw",
+  "ParentRef": "ruDqCao96Eq_NMIIl08K1A/yQ1Ie_rr-kKuZsagkMJRlw",
+  "Created": "2025-04-17T14:50:16.2460692Z",
+  "Updated": "2025-04-17T14:50:16.2460692Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

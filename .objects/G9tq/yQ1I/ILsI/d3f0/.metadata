@@ -1,0 +1,16 @@
+﻿{
+  "Name": "TxtReCaptcha",
+  "Type": "Element",
+  "TaxonomyType": "Text",
+  "Id": "d3f049HRnUifXJ5z0fliOg",
+  "Reference": "ruDqCao96Eq_NMIIl08K1A/d3f049HRnUifXJ5z0fliOg",
+  "ParentRef": "ruDqCao96Eq_NMIIl08K1A/ILsIKXmT4kCOOB8pnHLEqQ",
+  "Created": "2025-04-17T16:05:03.1565183Z",
+  "Updated": "2025-04-17T16:06:25.1656326Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

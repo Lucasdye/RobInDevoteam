@@ -1,0 +1,16 @@
+﻿{
+  "Name": "ReCaptcha",
+  "Description": "ReCaptcha Page",
+  "Type": "Screen",
+  "Id": "ILsIKXmT4kCOOB8pnHLEqQ",
+  "Reference": "ruDqCao96Eq_NMIIl08K1A/ILsIKXmT4kCOOB8pnHLEqQ",
+  "ParentRef": "ruDqCao96Eq_NMIIl08K1A/yQ1Ie_rr-kKuZsagkMJRlw",
+  "Created": "2025-04-17T15:57:57.9630807Z",
+  "Updated": "2025-04-17T16:00:52.4304648Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

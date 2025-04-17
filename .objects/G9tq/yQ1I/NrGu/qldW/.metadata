@@ -1,0 +1,14 @@
+﻿{
+  "Name": "InputSearch",
+  "Description": "Google Search",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "qldW4cbWAUm4mi1q2LWY2w",
+  "Reference": "ruDqCao96Eq_NMIIl08K1A/qldW4cbWAUm4mi1q2LWY2w",
+  "ParentRef": "ruDqCao96Eq_NMIIl08K1A/NrGuxhtt_0me58V8iXAEbw",
+  "Created": "2025-04-17T14:50:16.3582245Z",
+  "Updated": "2025-04-17T14:50:16.3582245Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

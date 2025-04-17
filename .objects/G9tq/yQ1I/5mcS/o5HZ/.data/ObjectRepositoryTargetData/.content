@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="oPRExNDYEEWuLm_sW0XYHw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="google.fr/search" CVScreenId="d46b523e-524d-4e06-8589-4836435a4604" CvElementArea="236, 189, 1428, 67" CvTextArgument="Google Search" CvType="InputBox" DesignTimeRectangle="266, 192, 1236, 65" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tag='TEXTAREA' aria-label='Search' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TEXTAREA' aria-label='Search' type='' class='gLFyf' aaname='' /&gt;" Guid="73a722f3-de5c-4c84-b32f-3721ec60c34e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAABNgAAABFCAYAAACYAVvyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJmSURBVHhe7dg7agIBGIXRWYKPRrGwUmwsRkGmGA0ysbISs/+t/AFLExLxtqc4zb07+JrRZFYAAAAAwHua5wEAAAAAeN0jsI2n81os17Xa7Grb9rXvLtUdr9Wfb3Ua7vXx+QUAAAAA/KJpD4OIBgAAAABvap4HAAAAAOB1AhsAAAAABAQ2AAAAAAgIbAAAAAAQENgAAAAAICCwAQAAAEBAYAMAAACAgMAGAAAAAAGBDQAAAAACAhsAAAAABAQ2AAAAAAgIbAAAAAAQENgAAAAAICCwAQAAAEBAYAMAAACAgMAGAAAAAAGBDQAAAAACAhsAAAAABAQ2AAAAAAgIbAAAAAAQENgAAAAAICCwAQAAAEBAYAMAAACAgMAGAAAAAAGBDQAAAAACAhsAAAAABAQ2AAAAAAgIbAAAAAAQENgAAAAAICCwAQAAAEBAYAMAAACAgMAGAAAAAAGBDQAAAAACAhsAAAAABAQ2AAAAAAgIbAAAAAAQENgAAAAAICCwAQAAAEBAYAMAAACAgMAGAAAAAAGBDQAAAAACAhsAAAAABAQ2AAAAAAgIbAAAAAAQENgAAAAAICCwAQAAAEBAYAMAAACAgMAGAAAAAAGBDQAAAAACAhsAAAAABAQ2AAAAAAgIbAAAAAAQENgAAAAAICCwAQAAAEBAYAMAAACAgMAGAAAAAAGBDQAAAAACAhsAAAAABAQ2AAAAAAgIbAAAAAAQENgAAAAAINC0h6FOw/3HAQAAAAD8rxlNZjWezmuxXNdqs6tt29e+u1R3vFZ/volvAAAAAPCHR2ADAAAAAN4jsAEAAABA4Bt/YdauHoyzRwAAAABJRU5ErkJggg==" ScopeSelectorArgument="&lt;html app='msedge.exe' title='google - Google Search' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive">
+      <TargetAnchorable.PointOffset>
+        <PointOffset />
+      </TargetAnchorable.PointOffset>
+      <imageRef attrName="InformativeScreenshot" originalValue="5b9692931a22bd95d0269fdbfdd3df36.png" xmlns="">0d8E8D_jW6U2ISGJJAfq80Q</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
