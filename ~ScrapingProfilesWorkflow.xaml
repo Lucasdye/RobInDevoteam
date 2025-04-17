@@ -1,0 +1,823 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="ScrapingProfiles" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="dt_ScrapedProfiles" Type="InOutArgument(sd:DataTable)" />
+    <x:Property Name="dt_Entreprises" Type="InOutArgument(sd:DataTable)" />
+    <x:Property Name="dt_Searchs" Type="InOutArgument(sd:DataTable)" />
+  </x:Members>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Numerics</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>GlobalVariablesT1PNoYwrqg</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="1452.0000000000002,3940.8" sap2010:WorkflowViewState.IdRef="Sequence_29">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Int32" Name="Idx">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Int32" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="str_SearchInput" />
+      <Variable x:TypeArguments="x:String" Name="variable1" />
+      <Variable x:TypeArguments="x:String" Name="variable2" />
+      <Variable x:TypeArguments="x:String" Name="str_CompanyName" />
+      <Variable x:TypeArguments="scg:List(x:Int32)" Name="lst_IndexRowTmpToDelete">
+        <Variable.Default>
+          <CSharpValue x:TypeArguments="scg:List(x:Int32)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_37">new System.Collections.Generic.List&lt;int&gt; ();</CSharpValue>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_PageExtraction">
+        <Variable.Default>
+          <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_33">new System.Data.DataTable();</CSharpValue>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_CompanyExtraction">
+        <Variable.Default>
+          <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_34">new System.Data.DataTable();</CSharpValue>
+        </Variable.Default>
+      </Variable>
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:BuildDataTable DisplayName="Build Data Table - dt_PageExtraction" sap:VirtualizedContainerService.HintSize="1123.2,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Company&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Profession&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Location&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Title&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Description&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;URL&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;">
+      <ui:BuildDataTable.DataTable>
+        <OutArgument x:TypeArguments="sd:DataTable">
+          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_24">dt_ScrapedProfiles</CSharpReference>
+        </OutArgument>
+      </ui:BuildDataTable.DataTable>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:BuildDataTable>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="GoogleSearchPage" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="1123.2,3825.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="baaa91cb-5552-4879-9a0c-2c375052b6f4" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1089.6,3545.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1056,3485.6" sap2010:WorkflowViewState.IdRef="ForEachRow_1" MaxIterations="1">
+              <ui:ForEachRow.Body>
+                <ActivityAction x:TypeArguments="sd:DataRow">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="BDDRow" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1054.4,3312.8" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign sap:VirtualizedContainerService.HintSize="1020.8,113.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">
+                          <CSharpReference x:TypeArguments="x:String">str_CompanyName</CSharpReference>
+                        </OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">BDDRow["TIER 1"].ToString()</CSharpValue>
+                        </InArgument>
+                      </Assign.Value>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Assign>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1020.8,56.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info">
+                      <ui:LogMessage.Message>
+                        <InArgument x:TypeArguments="x:Object">
+                          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">"Current Company Name : " + str_CompanyName</CSharpValue>
+                        </InArgument>
+                      </ui:LogMessage.Message>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:LogMessage>
+                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1020.8,1344" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                      <ui:ForEachRow.Body>
+                        <ActivityAction x:TypeArguments="sd:DataRow">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="SearchRow" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1019.2,1162.4" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Sequence DisplayName="Sequence - Scraping" sap:VirtualizedContainerService.HintSize="985.6,1102.4" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Assign sap:VirtualizedContainerService.HintSize="952,113.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">
+                                    <CSharpReference x:TypeArguments="x:String">str_SearchInput</CSharpReference>
+                                  </OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">SearchRow["Motif de recherche Google"].ToString().Replace("EntrepriseX", str_CompanyName)</CSharpValue>
+                                  </InArgument>
+                                </Assign.Value>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </Assign>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="952,56.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info">
+                                <ui:LogMessage.Message>
+                                  <InArgument x:TypeArguments="x:Object">
+                                    <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">"Current Search Input : " + str_SearchInput</CSharpValue>
+                                  </InArgument>
+                                </ui:LogMessage.Message>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:LogMessage>
+                              <uix:NCheckState DisplayName="Check App State - ReCaptcha" sap:VirtualizedContainerService.HintSize="952,275.2" sap2010:WorkflowViewState.IdRef="NCheckState_5" ScopeIdentifier="baaa91cb-5552-4879-9a0c-2c375052b6f4" Version="V4">
+                                <uix:NCheckState.IfExists>
+                                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,24.8" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="952,176" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Warn">
+                                      <ui:LogMessage.Message>
+                                        <InArgument x:TypeArguments="x:Object">
+                                          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">"Captcha appeared"</CSharpValue>
+                                        </InArgument>
+                                      </ui:LogMessage.Message>
+                                    </ui:LogMessage>
+                                    <uix:NClick ActivateBefore="True" ClickType="Single" CursorMotionType="Smooth" DisplayName="Click - ReCaptcha Check Box" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="952,225.6" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="baaa91cb-5552-4879-9a0c-2c375052b6f4" Version="V4">
+                                      <uix:NClick.Target>
+                                        <uix:TargetAnchorable BrowserURL="google.com/sorry/index" CVScreenId="ba51305d-5c89-483f-8fee-cc290aac1394" ContentHash="zq54MOm5aUqf4CTPlmhOQg" DesignTimeRectangle="65, 213, 35, 35" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl name='*' tag='IFRAME' /&gt;&lt;webctrl aria-role='checkbox' id='recaptcha-anchor' tag='SPAN' /&gt;" Guid="0d85fc37-7e30-4c77-a160-1a068ca05884" ImageBase64="" InformativeScreenshot="2a4c8491b58b101b7ab8e9f28f59c956.png" Reference="ruDqCao96Eq_NMIIl08K1A/RYrkcHxLVEaCvuVuTm7txg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='https://www.google.fr/search?q=site%3Alinkedin.com%2Fin+%28%28%22IT+Architect%22+OR+%22Architecte+SI%22+OR+%22Security+Architect%22%29+AND+%22AG2R%22+AND+%28%22%C3%8Ele-de-France%22+OR+%22Paris%22%29%29&amp;amp;sca_esv=0841a0c4fe98f0f5&amp;amp;ei=sSQBaJuBLcmIkdUPhNrQmAk&amp;amp;ved=0ahUKEwjbnaSRt9-MAxVJRKQEHQQtFJMQ4dUDCBA&amp;amp;uact=5&amp;amp;oq=site%3Alinkedin.com%2Fin+%28%28%22IT+Architect%22+OR+%22Architecte+SI%22+OR+%22Security+Architect%22%29+AND+%22AG2R%22+AND+%28%22%C3%8Ele-de-France%22+OR+%22Paris%22%29%29&amp;amp;gs_lp=Egxnd3Mtd2l6LXNlcnAif3NpdGU6bGlua2VkaW4uY29tL2luICgoIklUIEFyY2hpdGVjdCIgT1IgIkFyY2hpdGVjdGUgU0kiIE9SICJTZWN1cml0eSBBcmNoaXRlY3QiKSBBTkQgIkFHMlIiIEFORCAoIsOObGUtZGUtRnJhbmNlIiBPUiAiUGFyaXMiKSlIuUBQYliHQHAAeACQAQCYAQCgAQCqAQC4AQPIAQD4AQGYAgCgAgCoAgCYAwCIBgGSBwCgBwCyBwC4BwA&amp;amp;sclient=gws-wiz-serp' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive" />
+                                      </uix:NClick.Target>
+                                      <uix:NClick.VerifyOptions>
+                                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                          <uix:VerifyExecutionOptions.Retry>
+                                            <InArgument x:TypeArguments="x:Boolean" />
+                                          </uix:VerifyExecutionOptions.Retry>
+                                          <uix:VerifyExecutionOptions.Timeout>
+                                            <InArgument x:TypeArguments="x:Double" />
+                                          </uix:VerifyExecutionOptions.Timeout>
+                                        </uix:VerifyExecutionOptions>
+                                      </uix:NClick.VerifyOptions>
+                                    </uix:NClick>
+                                    <uix:NCheckState DisplayName="Check App State 'btnVerifyCaptcha'" sap:VirtualizedContainerService.HintSize="952,268" sap2010:WorkflowViewState.IdRef="NCheckState_6" ScopeIdentifier="baaa91cb-5552-4879-9a0c-2c375052b6f4" Version="V4">
+                                      <uix:NCheckState.IfExists>
+                                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,24.8" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Warn">
+                                            <ui:LogMessage.Message>
+                                              <InArgument x:TypeArguments="x:Object">
+                                                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_31">"Puzzle appeared"</CSharpValue>
+                                              </InArgument>
+                                            </ui:LogMessage.Message>
+                                          </ui:LogMessage>
+                                          <uix:NClick ActivateBefore="True" ClickType="Single" CursorMotionType="Smooth" DelayAfter="5" DisplayName="Click 'btnCaptchaBuster'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,218.4" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="baaa91cb-5552-4879-9a0c-2c375052b6f4" Version="V4">
+                                            <uix:NClick.Target>
+                                              <uix:TargetAnchorable BrowserURL="google.com/sorry/index" CVScreenId="9e498c87-ed43-4afb-8db6-30e85180c0ea" ContentHash="whwuLW_k0EijhDwQjOCgWQ" DesignTimeRectangle="241, 774, 60, 60" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl tag='IFRAME' uipath-html-title='recaptcha challenge expires in two minutes' /&gt;&lt;webctrl isleaf='1' parentid='rc-imageselect' tabindex='2' tag='DIV' /&gt;" Guid="31d987d2-341d-45a2-9056-26e8065fde44" InformativeScreenshot="bbe6b7c3a08c6fc8604e97c8be1b512a.png" Reference="ruDqCao96Eq_NMIIl08K1A/40CTFQJbi0OZGuqX88mZEw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='https://www.google.fr/search?q=site%3Alinkedin.com%2Fin+%28%28%22Product+Owner+RPA%22+OR+%22PO+RPA%22+OR+%22Smart+Automation%22%29+AND+%22AG2R%22+AND+%28%22%C3%8Ele-de-France%22+OR+%22Paris%22%29%29&amp;amp;sca_esv=0841a0c4fe98f0f5&amp;amp;ei=xCsBaJDrH43W7M8Ps8fP8A0&amp;amp;ved=0ahUKEwiQ3d3wvd-MAxUNK_sDHbPjE94Q4dUDCBA&amp;amp;uact=5&amp;amp;oq=site%3Alinkedin.com%2Fin+%28%28%22Product+Owner+RPA%22+OR+%22PO+RPA%22+OR+%22Smart+Automation%22%29+AND+%22AG2R%22+AND+%28%22%C3%8Ele-de-France%22+OR+%22Paris%22%29%29&amp;amp;gs_lp=Egxnd3Mtd2l6LXNlcnAie3NpdGU6bGlua2VkaW4uY29tL2luICgoIlByb2R1Y3QgT3duZXIgUlBBIiBPUiAiUE8gUlBBIiBPUiAiU21hcnQgQXV0b21hdGlvbiIpIEFORCAiQUcyUiIgQU5EICgiw45sZS1kZS1GcmFuY2UiIE9SICJQYXJpcyIpKUiWPVBRWOU8cAB4AJABAZgBAKABAKoBALgBA8gBAPgBAZgCAKACAKgCAJgDAIgGAZIHAKAHALIHALgHAA&amp;amp;sclient=gws-wiz-serp' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive" />
+                                            </uix:NClick.Target>
+                                            <uix:NClick.VerifyOptions>
+                                              <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                                <uix:VerifyExecutionOptions.Retry>
+                                                  <InArgument x:TypeArguments="x:Boolean" />
+                                                </uix:VerifyExecutionOptions.Retry>
+                                                <uix:VerifyExecutionOptions.Timeout>
+                                                  <InArgument x:TypeArguments="x:Double" />
+                                                </uix:VerifyExecutionOptions.Timeout>
+                                              </uix:VerifyExecutionOptions>
+                                            </uix:NClick.VerifyOptions>
+                                          </uix:NClick>
+                                        </Sequence>
+                                      </uix:NCheckState.IfExists>
+                                      <uix:NCheckState.IfNotExists>
+                                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="449.6,24.8" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </Sequence>
+                                      </uix:NCheckState.IfNotExists>
+                                      <uix:NCheckState.Target>
+                                        <uix:TargetAnchorable BrowserURL="google.com/sorry/index" CVScreenId="3db39116-8503-4380-97de-b6a2e3c69186" ContentHash="O9VEC6NBFkmgMj6shnU4zQ" DesignTimeRectangle="478, 777, 125, 52" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl id='recaptcha-verify-button' tag='BUTTON' /&gt;" Guid="f34fbb3d-5a65-407c-ada8-3b9372e4afef" InformativeScreenshot="be9955bb5225bb2bedb9bcc7d05ec67b.png" Reference="ruDqCao96Eq_NMIIl08K1A/xEaiiE6APEa4-UAk753QmA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='https://www.google.fr/search?q=site%3Alinkedin.com%2Fin+%28%28%22IT+Architect%22+OR+%22Architecte+SI%22+OR+%22Security+Architect%22%29+AND+%22AG2R%22+AND+%28%22%C3%8Ele-de-France%22+OR+%22Paris%22%29%29&amp;amp;sca_esv=0841a0c4fe98f0f5&amp;amp;ei=sSQBaJuBLcmIkdUPhNrQmAk&amp;amp;ved=0ahUKEwjbnaSRt9-MAxVJRKQEHQQtFJMQ4dUDCBA&amp;amp;uact=5&amp;amp;oq=site%3Alinkedin.com%2Fin+%28%28%22IT+Architect%22+OR+%22Architecte+SI%22+OR+%22Security+Architect%22%29+AND+%22AG2R%22+AND+%28%22%C3%8Ele-de-France%22+OR+%22Paris%22%29%29&amp;amp;gs_lp=Egxnd3Mtd2l6LXNlcnAif3NpdGU6bGlua2VkaW4uY29tL2luICgoIklUIEFyY2hpdGVjdCIgT1IgIkFyY2hpdGVjdGUgU0kiIE9SICJTZWN1cml0eSBBcmNoaXRlY3QiKSBBTkQgIkFHMlIiIEFORCAoIsOObGUtZGUtRnJhbmNlIiBPUiAiUGFyaXMiKSlIuUBQYliHQHAAeACQAQCYAQCgAQCqAQC4AQPIAQD4AQGYAgCgAgCoAgCYAwCIBgGSBwCgBwCyBwC4BwA&amp;amp;sclient=gws-wiz-serp' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive" />
+                                      </uix:NCheckState.Target>
+                                    </uix:NCheckState>
+                                  </Sequence>
+                                </uix:NCheckState.IfExists>
+                                <uix:NCheckState.IfNotExists>
+                                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="449.6,24.8" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </Sequence>
+                                </uix:NCheckState.IfNotExists>
+                                <uix:NCheckState.Target>
+                                  <uix:TargetAnchorable BrowserURL="google.com/sorry/index" CVScreenId="5a6737cb-417f-43f5-81d1-f2be468279ad" ContentHash="jwX-rOheZEelMPqNZzVDNw" DesignTimeRectangle="340, 245, 73, 13" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl name='*' tag='IFRAME' /&gt;&lt;webctrl class='rc-anchor-logo-text' aaname='reCAPTCHA' innertext='reCAPTCHA' visibleinnertext='reCAPTCHA' /&gt;" Guid="51f0b6a0-ce8d-415a-9643-7a9caf1d9ad7" ImageBase64="" InformativeScreenshot="a1a45270e04474134c34a542fcd36d03.png" Reference="ruDqCao96Eq_NMIIl08K1A/d3f049HRnUifXJ5z0fliOg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='https://www.google.fr/search?q=site%3Alinkedin.com%2Fin+%28%28%22IT+Architect%22+OR+%22Architecte+SI%22+OR+%22Security+Architect%22%29+AND+%22AG2R%22+AND+%28%22%C3%8Ele-de-France%22+OR+%22Paris%22%29%29&amp;amp;sca_esv=0841a0c4fe98f0f5&amp;amp;ei=sSQBaJuBLcmIkdUPhNrQmAk&amp;amp;ved=0ahUKEwjbnaSRt9-MAxVJRKQEHQQtFJMQ4dUDCBA&amp;amp;uact=5&amp;amp;oq=site%3Alinkedin.com%2Fin+%28%28%22IT+Architect%22+OR+%22Architecte+SI%22+OR+%22Security+Architect%22%29+AND+%22AG2R%22+AND+%28%22%C3%8Ele-de-France%22+OR+%22Paris%22%29%29&amp;amp;gs_lp=Egxnd3Mtd2l6LXNlcnAif3NpdGU6bGlua2VkaW4uY29tL2luICgoIklUIEFyY2hpdGVjdCIgT1IgIkFyY2hpdGVjdGUgU0kiIE9SICJTZWN1cml0eSBBcmNoaXRlY3QiKSBBTkQgIkFHMlIiIEFORCAoIsOObGUtZGUtRnJhbmNlIiBPUiAiUGFyaXMiKSlIuUBQYliHQHAAeACQAQCYAQCgAQCqAQC4AQPIAQD4AQGYAgCgAgCoAgCYAwCIBgGSBwCgBwCyBwC4BwA&amp;amp;sclient=gws-wiz-serp' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive" />
+                                </uix:NCheckState.Target>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </uix:NCheckState>
+                              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into - Google Search" EmptyFieldMode="MultiLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="952,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="baaa91cb-5552-4879-9a0c-2c375052b6f4" Version="V4">
+                                <uix:NTypeInto.Target>
+                                  <uix:TargetAnchorable BrowserURL="google.fr/search" CVScreenId="d46b523e-524d-4e06-8589-4836435a4604" ContentHash="oPRExNDYEEWuLm_sW0XYHw" CvElementArea="236, 189, 1428, 67" CvTextArgument="Google Search" CvType="InputBox" DesignTimeRectangle="266, 192, 1236, 65" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tag='TEXTAREA' aria-label='Search' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TEXTAREA' aria-label='Search' type='' class='gLFyf' aaname='' /&gt;" Guid="73a722f3-de5c-4c84-b32f-3721ec60c34e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAABNgAAABFCAYAAACYAVvyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJmSURBVHhe7dg7agIBGIXRWYKPRrGwUmwsRkGmGA0ysbISs/+t/AFLExLxtqc4zb07+JrRZFYAAAAAwHua5wEAAAAAeN0jsI2n81os17Xa7Grb9rXvLtUdr9Wfb3Ua7vXx+QUAAAAA/KJpD4OIBgAAAABvap4HAAAAAOB1AhsAAAAABAQ2AAAAAAgIbAAAAAAQENgAAAAAICCwAQAAAEBAYAMAAACAgMAGAAAAAAGBDQAAAAACAhsAAAAABAQ2AAAAAAgIbAAAAAAQENgAAAAAICCwAQAAAEBAYAMAAACAgMAGAAAAAAGBDQAAAAACAhsAAAAABAQ2AAAAAAgIbAAAAAAQENgAAAAAICCwAQAAAEBAYAMAAACAgMAGAAAAAAGBDQAAAAACAhsAAAAABAQ2AAAAAAgIbAAAAAAQENgAAAAAICCwAQAAAEBAYAMAAACAgMAGAAAAAAGBDQAAAAACAhsAAAAABAQ2AAAAAAgIbAAAAAAQENgAAAAAICCwAQAAAEBAYAMAAACAgMAGAAAAAAGBDQAAAAACAhsAAAAABAQ2AAAAAAgIbAAAAAAQENgAAAAAICCwAQAAAEBAYAMAAACAgMAGAAAAAAGBDQAAAAACAhsAAAAABAQ2AAAAAAgIbAAAAAAQENgAAAAAICCwAQAAAEBAYAMAAACAgMAGAAAAAAGBDQAAAAACAhsAAAAABAQ2AAAAAAgIbAAAAAAQENgAAAAAINC0h6FOw/3HAQAAAAD8rxlNZjWezmuxXNdqs6tt29e+u1R3vFZ/volvAAAAAPCHR2ADAAAAAN4jsAEAAABA4Bt/YdauHoyzRwAAAABJRU5ErkJggg==" InformativeScreenshot="5b9692931a22bd95d0269fdbfdd3df36.png" Reference="ruDqCao96Eq_NMIIl08K1A/o5HZpHADSUq34VvX3aXr9Q" ScopeSelectorArgument="&lt;html app='msedge.exe' title='google - Google Search' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive">
+                                    <uix:TargetAnchorable.PointOffset>
+                                      <uix:PointOffset />
+                                    </uix:TargetAnchorable.PointOffset>
+                                  </uix:TargetAnchorable>
+                                </uix:NTypeInto.Target>
+                                <uix:NTypeInto.Text>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">str_SearchInput + "[k(enter)]"</CSharpValue>
+                                  </InArgument>
+                                </uix:NTypeInto.Text>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </uix:NTypeInto>
+                              <uix:NCheckState DisplayName="Check App State - ReCaptcha" sap:VirtualizedContainerService.HintSize="952,56.8" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="baaa91cb-5552-4879-9a0c-2c375052b6f4" Version="V4">
+                                <uix:NCheckState.IfExists>
+                                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="985.6,1159.2" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="952,176" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Warn">
+                                      <ui:LogMessage.Message>
+                                        <InArgument x:TypeArguments="x:Object">
+                                          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_27">"Captcha appeared"</CSharpValue>
+                                        </InArgument>
+                                      </ui:LogMessage.Message>
+                                    </ui:LogMessage>
+                                    <uix:NClick ActivateBefore="True" ClickType="Single" CursorMotionType="Smooth" DisplayName="Click - ReCaptcha Check Box" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="952,225.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="baaa91cb-5552-4879-9a0c-2c375052b6f4" Version="V4">
+                                      <uix:NClick.Target>
+                                        <uix:TargetAnchorable BrowserURL="google.com/sorry/index" CVScreenId="ba51305d-5c89-483f-8fee-cc290aac1394" ContentHash="zq54MOm5aUqf4CTPlmhOQg" DesignTimeRectangle="65, 213, 35, 35" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl name='*' tag='IFRAME' /&gt;&lt;webctrl aria-role='checkbox' id='recaptcha-anchor' tag='SPAN' /&gt;" Guid="0d85fc37-7e30-4c77-a160-1a068ca05884" ImageBase64="" InformativeScreenshot="2a4c8491b58b101b7ab8e9f28f59c956.png" Reference="ruDqCao96Eq_NMIIl08K1A/RYrkcHxLVEaCvuVuTm7txg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='https://www.google.fr/search?q=site%3Alinkedin.com%2Fin+%28%28%22IT+Architect%22+OR+%22Architecte+SI%22+OR+%22Security+Architect%22%29+AND+%22AG2R%22+AND+%28%22%C3%8Ele-de-France%22+OR+%22Paris%22%29%29&amp;amp;sca_esv=0841a0c4fe98f0f5&amp;amp;ei=sSQBaJuBLcmIkdUPhNrQmAk&amp;amp;ved=0ahUKEwjbnaSRt9-MAxVJRKQEHQQtFJMQ4dUDCBA&amp;amp;uact=5&amp;amp;oq=site%3Alinkedin.com%2Fin+%28%28%22IT+Architect%22+OR+%22Architecte+SI%22+OR+%22Security+Architect%22%29+AND+%22AG2R%22+AND+%28%22%C3%8Ele-de-France%22+OR+%22Paris%22%29%29&amp;amp;gs_lp=Egxnd3Mtd2l6LXNlcnAif3NpdGU6bGlua2VkaW4uY29tL2luICgoIklUIEFyY2hpdGVjdCIgT1IgIkFyY2hpdGVjdGUgU0kiIE9SICJTZWN1cml0eSBBcmNoaXRlY3QiKSBBTkQgIkFHMlIiIEFORCAoIsOObGUtZGUtRnJhbmNlIiBPUiAiUGFyaXMiKSlIuUBQYliHQHAAeACQAQCYAQCgAQCqAQC4AQPIAQD4AQGYAgCgAgCoAgCYAwCIBgGSBwCgBwCyBwC4BwA&amp;amp;sclient=gws-wiz-serp' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive" />
+                                      </uix:NClick.Target>
+                                      <uix:NClick.VerifyOptions>
+                                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                          <uix:VerifyExecutionOptions.Retry>
+                                            <InArgument x:TypeArguments="x:Boolean" />
+                                          </uix:VerifyExecutionOptions.Retry>
+                                          <uix:VerifyExecutionOptions.Timeout>
+                                            <InArgument x:TypeArguments="x:Double" />
+                                          </uix:VerifyExecutionOptions.Timeout>
+                                        </uix:VerifyExecutionOptions>
+                                      </uix:NClick.VerifyOptions>
+                                    </uix:NClick>
+                                    <uix:NCheckState DisplayName="Check App State 'btnVerifyCaptcha'" sap:VirtualizedContainerService.HintSize="952,696" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="baaa91cb-5552-4879-9a0c-2c375052b6f4" Version="V4">
+                                      <uix:NCheckState.IfExists>
+                                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,452.8" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Warn">
+                                            <ui:LogMessage.Message>
+                                              <InArgument x:TypeArguments="x:Object">
+                                                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29">"Puzzle appeared"</CSharpValue>
+                                              </InArgument>
+                                            </ui:LogMessage.Message>
+                                          </ui:LogMessage>
+                                          <uix:NClick ActivateBefore="True" ClickType="Single" CursorMotionType="Smooth" DelayAfter="5" DisplayName="Click 'btnCaptchaBuster'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,216.8" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="baaa91cb-5552-4879-9a0c-2c375052b6f4" Version="V4">
+                                            <uix:NClick.Target>
+                                              <uix:TargetAnchorable BrowserURL="google.com/sorry/index" CVScreenId="6a79ff0c-6a93-4371-950e-c3498a01ad9d" ContentHash="sbLdN9v500uSuYWjBbD2yA" DesignTimeRectangle="241, 774, 60, 60" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl name='c-y7nanjz9f346' tag='IFRAME' /&gt;&lt;webctrl isleaf='1' parentid='rc-imageselect' tabindex='2' tag='DIV' /&gt;" Guid="60a25a2e-253f-47e3-9767-54f562353772" InformativeScreenshot="665153a16fdf27814afe7e795bb46e99.png" Reference="ruDqCao96Eq_NMIIl08K1A/40CTFQJbi0OZGuqX88mZEw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='https://www.google.fr/search?*' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive" />
+                                            </uix:NClick.Target>
+                                            <uix:NClick.VerifyOptions>
+                                              <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                                <uix:VerifyExecutionOptions.Retry>
+                                                  <InArgument x:TypeArguments="x:Boolean" />
+                                                </uix:VerifyExecutionOptions.Retry>
+                                                <uix:VerifyExecutionOptions.Timeout>
+                                                  <InArgument x:TypeArguments="x:Double" />
+                                                </uix:VerifyExecutionOptions.Timeout>
+                                              </uix:VerifyExecutionOptions>
+                                            </uix:NClick.VerifyOptions>
+                                          </uix:NClick>
+                                        </Sequence>
+                                      </uix:NCheckState.IfExists>
+                                      <uix:NCheckState.IfNotExists>
+                                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="449.6,89.6" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </Sequence>
+                                      </uix:NCheckState.IfNotExists>
+                                      <uix:NCheckState.Target>
+                                        <uix:TargetAnchorable BrowserURL="google.com/sorry/index" CVScreenId="3db39116-8503-4380-97de-b6a2e3c69186" ContentHash="O9VEC6NBFkmgMj6shnU4zQ" DesignTimeRectangle="478, 777, 125, 52" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl id='recaptcha-verify-button' tag='BUTTON' /&gt;" Guid="f34fbb3d-5a65-407c-ada8-3b9372e4afef" InformativeScreenshot="be9955bb5225bb2bedb9bcc7d05ec67b.png" Reference="ruDqCao96Eq_NMIIl08K1A/xEaiiE6APEa4-UAk753QmA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='https://www.google.fr/search?q=site%3Alinkedin.com%2Fin+%28%28%22IT+Architect%22+OR+%22Architecte+SI%22+OR+%22Security+Architect%22%29+AND+%22AG2R%22+AND+%28%22%C3%8Ele-de-France%22+OR+%22Paris%22%29%29&amp;amp;sca_esv=0841a0c4fe98f0f5&amp;amp;ei=sSQBaJuBLcmIkdUPhNrQmAk&amp;amp;ved=0ahUKEwjbnaSRt9-MAxVJRKQEHQQtFJMQ4dUDCBA&amp;amp;uact=5&amp;amp;oq=site%3Alinkedin.com%2Fin+%28%28%22IT+Architect%22+OR+%22Architecte+SI%22+OR+%22Security+Architect%22%29+AND+%22AG2R%22+AND+%28%22%C3%8Ele-de-France%22+OR+%22Paris%22%29%29&amp;amp;gs_lp=Egxnd3Mtd2l6LXNlcnAif3NpdGU6bGlua2VkaW4uY29tL2luICgoIklUIEFyY2hpdGVjdCIgT1IgIkFyY2hpdGVjdGUgU0kiIE9SICJTZWN1cml0eSBBcmNoaXRlY3QiKSBBTkQgIkFHMlIiIEFORCAoIsOObGUtZGUtRnJhbmNlIiBPUiAiUGFyaXMiKSlIuUBQYliHQHAAeACQAQCYAQCgAQCqAQC4AQPIAQD4AQGYAgCgAgCoAgCYAwCIBgGSBwCgBwCyBwC4BwA&amp;amp;sclient=gws-wiz-serp' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive" />
+                                      </uix:NCheckState.Target>
+                                    </uix:NCheckState>
+                                  </Sequence>
+                                </uix:NCheckState.IfExists>
+                                <uix:NCheckState.IfNotExists>
+                                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="449.6,91.2" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </Sequence>
+                                </uix:NCheckState.IfNotExists>
+                                <uix:NCheckState.Target>
+                                  <uix:TargetAnchorable BrowserURL="google.com/sorry/index" CVScreenId="5a6737cb-417f-43f5-81d1-f2be468279ad" ContentHash="jwX-rOheZEelMPqNZzVDNw" DesignTimeRectangle="340, 245, 73, 13" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl name='*' tag='IFRAME' /&gt;&lt;webctrl class='rc-anchor-logo-text' aaname='reCAPTCHA' innertext='reCAPTCHA' visibleinnertext='reCAPTCHA' /&gt;" Guid="51f0b6a0-ce8d-415a-9643-7a9caf1d9ad7" ImageBase64="" InformativeScreenshot="a1a45270e04474134c34a542fcd36d03.png" Reference="ruDqCao96Eq_NMIIl08K1A/d3f049HRnUifXJ5z0fliOg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='https://www.google.fr/search?q=site%3Alinkedin.com%2Fin+%28%28%22IT+Architect%22+OR+%22Architecte+SI%22+OR+%22Security+Architect%22%29+AND+%22AG2R%22+AND+%28%22%C3%8Ele-de-France%22+OR+%22Paris%22%29%29&amp;amp;sca_esv=0841a0c4fe98f0f5&amp;amp;ei=sSQBaJuBLcmIkdUPhNrQmAk&amp;amp;ved=0ahUKEwjbnaSRt9-MAxVJRKQEHQQtFJMQ4dUDCBA&amp;amp;uact=5&amp;amp;oq=site%3Alinkedin.com%2Fin+%28%28%22IT+Architect%22+OR+%22Architecte+SI%22+OR+%22Security+Architect%22%29+AND+%22AG2R%22+AND+%28%22%C3%8Ele-de-France%22+OR+%22Paris%22%29%29&amp;amp;gs_lp=Egxnd3Mtd2l6LXNlcnAif3NpdGU6bGlua2VkaW4uY29tL2luICgoIklUIEFyY2hpdGVjdCIgT1IgIkFyY2hpdGVjdGUgU0kiIE9SICJTZWN1cml0eSBBcmNoaXRlY3QiKSBBTkQgIkFHMlIiIEFORCAoIsOObGUtZGUtRnJhbmNlIiBPUiAiUGFyaXMiKSlIuUBQYliHQHAAeACQAQCYAQCgAQCqAQC4AQPIAQD4AQGYAgCgAgCoAgCYAwCIBgGSBwCgBwCyBwC4BwA&amp;amp;sclient=gws-wiz-serp' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive" />
+                                </uix:NCheckState.Target>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </uix:NCheckState>
+                              <uix:NCheckState DisplayName="Check App State - No Result" sap:VirtualizedContainerService.HintSize="952,266.4" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="baaa91cb-5552-4879-9a0c-2c375052b6f4" Version="V4">
+                                <uix:NCheckState.IfExists>
+                                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,24.8" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </Sequence>
+                                </uix:NCheckState.IfExists>
+                                <uix:NCheckState.IfNotExists>
+                                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="449.6,24.8" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Sequence DisplayName=" Sequence - Scrape" sap:VirtualizedContainerService.HintSize="483.2,1152" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <uix:NExtractData AppendResults="False" ContinueOnError="True" DisplayName="Extract Table Data 'Extract Table Data'" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Url'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column7' Name='Title'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;true&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='Location'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='Role'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column3' Name='Company'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column4' Name='Description'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column5' Name='NbFollowers'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column6' Name='Name'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='href' name2='Column7' attr2='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='h3' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column1' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='span' idx='3' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column3' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='span' idx='5' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column4' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column5' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='cite' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column6' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="449.6,189.6" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="baaa91cb-5552-4879-9a0c-2c375052b6f4" Version="V4">
+                                        <uix:NExtractData.DataTable>
+                                          <InOutArgument x:TypeArguments="sd:DataTable">
+                                            <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_16">dt_PageExtraction</CSharpReference>
+                                          </InOutArgument>
+                                        </uix:NExtractData.DataTable>
+                                        <uix:NExtractData.Target>
+                                          <uix:TargetAnchorable BrowserURL="https://www.google.fr/search?q=site%3Alinkedin.com%2Fin+%28%28%22Head+of+Innovation%22+OR+%22Innovation+Manager%22+OR+%22Responsable+innovation%22%29+AND+%22AG2R%22+AND+%28%22%C3%8Ele-de-France%22+OR+%22Paris%22%29%29&amp;sca_esv=0841a0c4fe98f0f5&amp;ei=vD0BaOGPLYfW7M8P6NnHiQc&amp;ved=0ahUKEwjh3aSCz9-MAxUHK_sDHejsMXEQ4dUDCBA&amp;uact=5&amp;oq=site%3Alinkedin.com%2Fin+%28%28%22Head+of+Innovation%22+OR+%22Innovation+Manager%22+OR+%22Responsable+innovation%22%29+AND+%22AG2R%22+AND+%28%22%C3%8Ele-de-France%22+OR+%22Paris%22%29%29&amp;gs_lp=Egxnd3Mtd2l6LXNlcnAaAhgCIo4Bc2l0ZTpsaW5rZWRpbi5jb20vaW4gKCgiSGVhZCBvZiBJbm5vdmF0aW9uIiBPUiAiSW5ub3ZhdGlvbiBNYW5hZ2VyIiBPUiAiUmVzcG9uc2FibGUgaW5ub3ZhdGlvbiIpIEFORCAiQUcyUiIgQU5EICgiw45sZS1kZS1GcmFuY2UiIE9SICJQYXJpcyIpKUjkPVAAWLM9cAF4AJABAZgBqgGgAYdLqgEFNjcuMzO4AQPIAQD4AQGYAgWgArQEqAIGwgIUEAAYgAQYkQIYtAIYigUY6gLYAQHCAhEQLhiABBiRAhjRAxjHARiKBcICCxAuGIAEGNEDGMcBwgIFEAAYgATCAgUQLhiABMICIBAuGIAEGJECGNEDGMcBGIoFGJcFGNwEGN4EGOAE2AECwgIPEAAYgAQYQxiKBRhGGPkBwgILEAAYgAQYkQIYigXCAggQLhiABBjUAsICKRAAGIAEGEMYigUYRhj5ARiXBRiMBRjdBBhGGPkBGPQDGPUDGPYD2AECwgISEAAYgAQYQxjJAxiKBRhGGPkBwgIKEC4YgAQYQxiKBcICCxAAGIAEGJIDGIoFwgIIEAAYgAQYiwPCAiwQABiABBhDGMkDGIoFGEYY-QEYlwUYjAUY3QQYRhj5ARj0Axj1Axj2A9gBApgDBvEFdbiXNoSRrYC6BgQIARgHugYGCAIQARgUkgcDMS40oAf7cLIHAzAuNLgHrgQ&amp;sclient=gws-wiz-serp" ContentHash="y2MBYk5OqkOR-H9nj2y7og" DesignTimeRectangle="266, 304, 815, 1735" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl id='rso' tag='DIV' /&gt;" Guid="d8499359-4f59-4396-88ef-59787fa48e8b" InformativeScreenshot="0bb6dbbe1af4c1e9db6a22599a24c078.png" Reference="ruDqCao96Eq_NMIIl08K1A/UK2MqNb-jU6NdFZ_84SDYw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='site:linkedin.com/in ((&amp;quot;Head of Innovation&amp;quot; OR &amp;quot;Innovation Manager&amp;quot; OR &amp;quot;Responsable innovation&amp;quot;) AND &amp;quot;AG2R&amp;quot; AND (&amp;quot;Île-de-France&amp;quot; OR &amp;quot;Paris&amp;quot;)) - Google Search' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive" />
+                                        </uix:NExtractData.Target>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </uix:NExtractData>
+                                      <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Label Company" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="449.6,220" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1">
+                                        <ui:AddDataColumn.DataTable>
+                                          <InArgument x:TypeArguments="sd:DataTable">
+                                            <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21">dt_PageExtraction</CSharpValue>
+                                          </InArgument>
+                                        </ui:AddDataColumn.DataTable>
+                                        <ui:AddDataColumn.DefaultValue>
+                                          <InArgument x:TypeArguments="x:String">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">str_CompanyName</CSharpValue>
+                                          </InArgument>
+                                        </ui:AddDataColumn.DefaultValue>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </ui:AddDataColumn>
+                                      <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Label Profession" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="449.6,220" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2">
+                                        <ui:AddDataColumn.DataTable>
+                                          <InArgument x:TypeArguments="sd:DataTable">
+                                            <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">dt_PageExtraction</CSharpValue>
+                                          </InArgument>
+                                        </ui:AddDataColumn.DataTable>
+                                        <ui:AddDataColumn.DefaultValue>
+                                          <InArgument x:TypeArguments="x:String">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">SearchRow["Métier"].ToString()</CSharpValue>
+                                          </InArgument>
+                                        </ui:AddDataColumn.DefaultValue>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </ui:AddDataColumn>
+                                      <Sequence DisplayName="Sequence - Save Result in dt_CompanyExtraction" sap:VirtualizedContainerService.HintSize="449.6,437.6" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ui:MergeDataTable DisplayName="Merge Data Table" sap:VirtualizedContainerService.HintSize="416,166.4" sap2010:WorkflowViewState.IdRef="MergeDataTable_1" MissingSchemaAction="Add">
+                                          <ui:MergeDataTable.Destination>
+                                            <InOutArgument x:TypeArguments="sd:DataTable">
+                                              <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_28">dt_CompanyExtraction</CSharpReference>
+                                            </InOutArgument>
+                                          </ui:MergeDataTable.Destination>
+                                          <ui:MergeDataTable.Source>
+                                            <InArgument x:TypeArguments="sd:DataTable">
+                                              <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26">dt_PageExtraction</CSharpValue>
+                                            </InArgument>
+                                          </ui:MergeDataTable.Source>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </ui:MergeDataTable>
+                                        <ui:InvokeCode ContinueOnError="{x:Null}" Code="dt.Reset();" DisplayName="Invoke Code - Reset Dt" sap:VirtualizedContainerService.HintSize="416,188" sap2010:WorkflowViewState.IdRef="InvokeCode_3" Language="CSharp">
+                                          <ui:InvokeCode.Arguments>
+                                            <InOutArgument x:TypeArguments="sd:DataTable" x:Key="dt">
+                                              <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_22">dt_PageExtraction</CSharpReference>
+                                            </InOutArgument>
+                                          </ui:InvokeCode.Arguments>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </ui:InvokeCode>
+                                      </Sequence>
+                                    </Sequence>
+                                  </Sequence>
+                                </uix:NCheckState.IfNotExists>
+                                <uix:NCheckState.Target>
+                                  <uix:TargetAnchorable BrowserURL="google.fr/search" CVScreenId="4cd69f53-5805-4a69-81a2-c4051f4a99f8" ContentHash="KZjn0N4YOkmCUBGNEzf9zQ" DesignTimeRectangle="266, 437, 815, 21" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='P' aaname='Suggestions:' /&gt;" Guid="13c5e293-eeef-481a-977c-776496efcdf5" ImageBase64="" InformativeScreenshot="67e66f730b525759cb695b288ffa4081.png" Reference="ruDqCao96Eq_NMIIl08K1A/TJtCKRrvVkWQRH0jNmcDOA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='site:linkedin.com/in*- Google Search' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive" />
+                                </uix:NCheckState.Target>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </uix:NCheckState>
+                            </Sequence>
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:ForEachRow.Body>
+                      <ui:ForEachRow.DataTable>
+                        <InArgument x:TypeArguments="sd:DataTable">
+                          <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">dt_Searchs</CSharpValue>
+                        </InArgument>
+                      </ui:ForEachRow.DataTable>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:ForEachRow>
+                    <Sequence DisplayName="Sequence - Refining Scraping Result" sap:VirtualizedContainerService.HintSize="1020.8,1410.4" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Assign sap:VirtualizedContainerService.HintSize="452.8,113.6" sap2010:WorkflowViewState.IdRef="Assign_3">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Int32">
+                            <CSharpReference x:TypeArguments="x:Int32">Idx</CSharpReference>
+                          </OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <ui:ForEachRow ColumnNames="{x:Null}" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="452.8,820" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+                        <ui:ForEachRow.Body>
+                          <ActivityAction x:TypeArguments="sd:DataRow">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Row" />
+                            </ActivityAction.Argument>
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="451.2,638.4" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                              <Sequence.Variables>
+                                <Variable x:TypeArguments="x:String" Name="str_Role" />
+                              </Sequence.Variables>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <If sap:VirtualizedContainerService.HintSize="417.6,578.4" sap2010:WorkflowViewState.IdRef="If_1">
+                                <If.Condition>
+                                  <InArgument x:TypeArguments="x:Boolean">
+                                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_32">Row["Title"].ToString().ToLower().Contains(str_CompanyName.ToLower()) == false &amp;&amp; Row["Description"].ToString().ToLower().Contains(str_CompanyName.ToLower()) == false</CSharpValue>
+                                  </InArgument>
+                                </If.Condition>
+                                <If.Then>
+                                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,424" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                    <Sequence.Variables>
+                                      <Variable x:TypeArguments="x:String" Name="variable4" />
+                                    </Sequence.Variables>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382.4,176" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Warn">
+                                      <ui:LogMessage.Message>
+                                        <InArgument x:TypeArguments="x:Object">
+                                          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">"Row will be removed" + Environment.NewLine + "Infos : " + Row["Name"].ToString() + Environment.NewLine + "Description : " + Row["Description"].ToString()</CSharpValue>
+                                        </InArgument>
+                                      </ui:LogMessage.Message>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </ui:LogMessage>
+                                    <ui:InvokeCode ContinueOnError="{x:Null}" Code="lst.Add(idx);" DisplayName="Invoke Code - Add to List" sap:VirtualizedContainerService.HintSize="382.4,188" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
+                                      <ui:InvokeCode.Arguments>
+                                        <InOutArgument x:TypeArguments="scg:List(x:Int32)" x:Key="lst">
+                                          <CSharpReference x:TypeArguments="scg:List(x:Int32)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_9">lst_IndexRowTmpToDelete</CSharpReference>
+                                        </InOutArgument>
+                                        <InArgument x:TypeArguments="x:Int32" x:Key="idx">
+                                          <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">Idx</CSharpValue>
+                                        </InArgument>
+                                      </ui:InvokeCode.Arguments>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </ui:InvokeCode>
+                                  </Sequence>
+                                </If.Then>
+                                <If.Else>
+                                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,24.8" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </Sequence>
+                                </If.Else>
+                              </If>
+                            </Sequence>
+                          </ActivityAction>
+                        </ui:ForEachRow.Body>
+                        <ui:ForEachRow.CurrentIndex>
+                          <OutArgument x:TypeArguments="x:Int32">
+                            <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_10">Idx</CSharpReference>
+                          </OutArgument>
+                        </ui:ForEachRow.CurrentIndex>
+                        <ui:ForEachRow.DataTable>
+                          <InArgument x:TypeArguments="sd:DataTable">
+                            <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_36">dt_CompanyExtraction</CSharpValue>
+                          </InArgument>
+                        </ui:ForEachRow.DataTable>
+                      </ui:ForEachRow>
+                      <ui:InvokeCode ContinueOnError="{x:Null}" Code="&#xA;for (int i = lst_idx.Count - 1;  i &gt;= 0; i--) &#xA;{&#xA;&#x9;dt.Rows.RemoveAt(lst_idx[i]);&#xA;}" DisplayName="Invoke Code - Delete Rows in Dt_CompanyExtraction" sap:VirtualizedContainerService.HintSize="452.8,196.8" sap2010:WorkflowViewState.IdRef="InvokeCode_2" Language="CSharp">
+                        <ui:InvokeCode.Arguments>
+                          <InArgument x:TypeArguments="scg:List(x:Int32)" x:Key="lst_idx">
+                            <CSharpValue x:TypeArguments="scg:List(x:Int32)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">lst_IndexRowTmpToDelete</CSharpValue>
+                          </InArgument>
+                          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="dt">
+                            <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_20">dt_PageExtraction</CSharpReference>
+                          </InOutArgument>
+                        </ui:InvokeCode.Arguments>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:InvokeCode>
+                      <ui:InvokeCode ContinueOnError="{x:Null}" Code="lst.Clear();" DisplayName="Invoke Code - Clear list" sap:VirtualizedContainerService.HintSize="452.8,188" sap2010:WorkflowViewState.IdRef="InvokeCode_4" Language="CSharp">
+                        <ui:InvokeCode.Arguments>
+                          <InOutArgument x:TypeArguments="scg:List(x:Int32)" x:Key="lst">
+                            <CSharpReference x:TypeArguments="scg:List(x:Int32)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_14">lst_IndexRowTmpToDelete</CSharpReference>
+                          </InOutArgument>
+                        </ui:InvokeCode.Arguments>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:InvokeCode>
+                    </Sequence>
+                    <Sequence DisplayName="Sequence - Save Result in dt_ScrapedProfiles" sap:VirtualizedContainerService.HintSize="1020.8,328" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:MergeDataTable DisplayName="Merge Data Table" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="MergeDataTable_2" MissingSchemaAction="Add">
+                        <ui:MergeDataTable.Destination>
+                          <InOutArgument x:TypeArguments="sd:DataTable">
+                            <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_25">dt_ScrapedProfiles</CSharpReference>
+                          </InOutArgument>
+                        </ui:MergeDataTable.Destination>
+                        <ui:MergeDataTable.Source>
+                          <InArgument x:TypeArguments="sd:DataTable">
+                            <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_35">dt_PageExtraction</CSharpValue>
+                          </InArgument>
+                        </ui:MergeDataTable.Source>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:MergeDataTable>
+                      <ui:InvokeCode ContinueOnError="{x:Null}" Code="dt.Reset();" DisplayName="Invoke Code - Reset Dt" sap:VirtualizedContainerService.HintSize="416,188" sap2010:WorkflowViewState.IdRef="InvokeCode_5" Language="CSharp">
+                        <ui:InvokeCode.Arguments>
+                          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="dt">
+                            <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_29">dt_CompanyExtraction</CSharpReference>
+                          </InOutArgument>
+                        </ui:InvokeCode.Arguments>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:InvokeCode>
+                    </Sequence>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEachRow.Body>
+              <ui:ForEachRow.DataTable>
+                <InArgument x:TypeArguments="sd:DataTable">
+                  <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">dt_Entreprises</CSharpValue>
+                </InArgument>
+              </ui:ForEachRow.DataTable>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ForEachRow>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-9, -9, 1938, 1158" BrowserType="Edge" ContentHash="bP8Qna8eAUyEifPgHPtrLA" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAQlSURBVFhHvVdbbJRVEObFIF6ffPNBVPRNjdKWB60RcRXtAwm10toHFCvGoA9GrQlBAwlFQS4J+FBaLMQ0bCuBVqxQUkDqpY1FYpaQNmgBtVCzu91e2H/Xvcx8Zn7/3ZzLsv1bG79kks058883Z87MnNl583yCme9g5hoiaiaiASIaI6K0J1FvrZmZq0XX/H7WYOYHiaiFiJLwCSJKENE+Zl5k2vMNALcQ0XYiypoEfkFEGSLaxswLTPtFwcwPENEF0+BsQUQhZr7f5CkIZn6UiCKmEUH22gic1s8x8e6biL74HMKBJQg/U4boygDG33kDzoG9yI78YX7mgojCAB4x+TR4J7fIs6NXMbnxA4SXlSL8dElxWVaKyY/ed78xIU7cMBLMfGuhsCdPdCHyQrlNNI1EKp7E36dPmOZy12HnhCScqewc3G8ZnolMbd1omnRBRFs1cq/UtGyXk5sGcxKrq0a8aTeSXx9GsusI4k17EHu9Riff0QAwqybzkOrQrkLqXFWQZIs8/4RFPFa7Aqmz/aqqhtRAH6KrKnB9z6fmlgVpWi45gDvNJhPf9ZZFPr7uFfDUlKpWEOzEzaWCICKHmW+X8NeoG5wYRqZ7Pibr78mTS8nRRExVmxMw80sS/mZ1kS43INNzkyvO7rsQWb4YyeNHVZU5AxE1igMD6mL250DeAZHU4YVAJqOqzBmIqF8cGFMXM713aw5kz1er2xaWbo77ltMX9INIYxIH0upi5uR8zQH6bYO6bcEkKSatP2hU4kDqf3Wg5UxK+zbnQFRdtK4gtErdtmCSFJP2fisC7hXoSXjuWc2Bkd6HkKaZJ+GlMFkOnBm0csBNQqMMP86TH+1aiMeDK9Ax3KOq+EKwL205MDqht2a3DGWGUxc5cRmJngVo6HgMi4MrXQl0vIpoclxVK4rrSUblLkcjX92YMNWkEVW5w6bMcOrGzr5NefKc1Ha/h4nU9K04nQXqDyat07fZ9+8AuC33GO1TN6/Fwyg/9LLlRMVXa9F79ayqquHi+BWs6Qxi6eZJjVyikUhZ4d+rPseL5IlUFY5d6bUcyEnlN29j+7kWtF88hi9/PY7PQq14rWc9SoKV7n7Z/no89cmfeQe+G9LnWil9Zr4v74AXhW2aFoAvhjotcr9S0roa5Tt+smpfQERbNHKBN4afN5W7f/8e5YdqLYLppKytCk2hTtOckP8C4GaT34VMKd70qmHUiWD9jztR2vZviKeTtac+xGBs2DQj5H8BuNfk1SCjcyEnBJKcBwaPYN23m7C8sw5L2qvckwY61qDu5AY3F4Zil8zPXAg5Mz9s8hWEF4mQaWS28MJe/OQmZHSW6dWsjpnA++O65YZ37gdeNOQfsTQOXxBdqXOr1P4LZICUGU76tzwikifynHoiv2WtUdprvsP5wD+h4X82yHrydwAAAABJRU5ErkJggg==" InformativeScreenshot="141ce025d18f92aab36eb5b7d316b0b8.jpg" Reference="ruDqCao96Eq_NMIIl08K1A/5mcS5gWEU0mJlPVr3PKaPA" Selector="&lt;html app='msedge.exe' title='google - Google Search' /&gt;" Url="https://www.google.fr/search?q=google&amp;sca_esv=0841a0c4fe98f0f5&amp;source=hp&amp;ei=zBIBaL76L9SkkdUPloXv-Q0&amp;iflsig=ACkRmUkAAAAAaAEg3JkkJlzRjuG5vTG9FuV2cfNpRcvP&amp;ved=0ahUKEwi-kPWIpt-MAxVUUqQEHZbCO98Q4dUDCBg&amp;uact=5&amp;oq=google&amp;gs_lp=Egdnd3Mtd2l6GgIYAyIGZ29vZ2xlMhEQABiABBimAxj4BRioAxiLAzIOEAAYgAQYpgMYqAMYiwMyFBAuGIAEGNEDGNIDGMcBGKgDGIsDMggQABiABBiLAzIFEAAYgAQyCBAAGIAEGIsDMggQABiABBiLAzIFEAAYgAQyBRAAGIAEMggQABiABBiLA0jqC1DwBVj-CXABeACQAQCYATOgAYsCqgEBNrgBA8gBAPgBAZgCBqACmwKoAgCYAwHxBbIXgx7cRjZHkgcBNqAHpSqyBwE2uAebAg&amp;sclient=gws-wiz" Version="V2" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
