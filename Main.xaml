@@ -115,7 +115,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1156,424" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1468.8000000000002,473.24000000000007" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_ScrapedProfiles">
         <Variable.Default>
@@ -133,16 +133,8 @@
         </Variable.Default>
       </Variable>
       <Variable x:TypeArguments="x:String" Name="str_SearchInput" />
-      <Variable x:TypeArguments="x:Int32" Name="Idx">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" />
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:String" Name="str_CompanyName">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">None</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="Idx" />
+      <Variable x:TypeArguments="x:String" Default="None" Name="str_CompanyName" />
       <Variable x:TypeArguments="scg:List(x:Int32)" Name="lst_IndexRowTmpToDelete">
         <Variable.Default>
           <CSharpValue x:TypeArguments="scg:List(x:Int32)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_32">new System.Collections.Generic.List&lt;int&gt;()</CSharpValue>
@@ -154,11 +146,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="InitWorkflow - Invoke Workflow File (InitWorkflow.xaml)" sap:VirtualizedContainerService.HintSize="416,233.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="InitWorkflow.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="InitWorkflow - Invoke Workflow File (InitWorkflow.xaml)" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="InitWorkflow.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="dt_ScrapedProfiles">
-          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_23">dt_ScrapedProfiles</CSharpReference>
-        </InOutArgument>
         <InOutArgument x:TypeArguments="sd:DataTable" x:Key="dt_Entreprises">
           <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_24">dt_Entreprises</CSharpReference>
         </InOutArgument>
@@ -177,18 +166,6 @@
         </InOutArgument>
         <InOutArgument x:TypeArguments="sd:DataTable" x:Key="dt_Searchs">
           <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_30">dt_Searchs</CSharpReference>
-        </InOutArgument>
-        <InOutArgument x:TypeArguments="x:String" x:Key="str_CompanyName">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_33">str_CompanyName</CSharpReference>
-        </InOutArgument>
-        <InOutArgument x:TypeArguments="x:String" x:Key="str_SearchInput">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_34">str_SearchInput</CSharpReference>
-        </InOutArgument>
-        <InOutArgument x:TypeArguments="x:Int32" x:Key="Idx">
-          <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_35">Idx</CSharpReference>
-        </InOutArgument>
-        <InOutArgument x:TypeArguments="scg:List(x:Int32)" x:Key="lst_IndexRowTmpToDelete">
-          <CSharpReference x:TypeArguments="scg:List(x:Int32)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_36">lst_IndexRowTmpToDelete</CSharpReference>
         </InOutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
